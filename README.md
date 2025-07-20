@@ -1,76 +1,99 @@
-# Notcoin Clone
+# NotCoin Telegram Mini App Clone - Enhanced Edition
 
-This repository contains the initial setup and the final version of the Notcoin clone project, including the basic project structure, necessary images, and icons.
+This is an enhanced NotCoin clone with advanced reward systems, withdrawal functionality, and referral bonuses.
 
-## Overview
+## 🚀 New Features
 
-This project is a clone of the popular Telegram mini app, Notcoin. The repository provides two branches:
+### 1. NotCoin Reward System
+- **Tap-to-Earn**: For every 10,000 taps, users earn 10 NotCoins
+- **Progress Tracking**: Visual progress bar showing taps until next reward
+- **Persistent Storage**: All progress is saved in browser localStorage
 
-1. **Initial Setup**: Provides the foundational structure and assets needed to build the full application.
-2. **Final Version**: The completed application with all functionalities.
+### 2. Withdrawal System
+- **Minimum Withdrawal**: Users can withdraw when they have 1,000+ NotCoins
+- **Weekly Limit**: Only one withdrawal allowed per week
+- **Withdrawal History**: All withdrawals are tracked and saved
+- **Smart Validation**: Prevents invalid withdrawals and shows clear error messages
 
-## Getting Started
+### 3. Referral System
+- **Friend Invites**: Users can add referrals through the interface
+- **Bonus Rewards**: Every 10 referrals grants 100 NotCoins bonus
+- **Progress Tracking**: Visual progress showing referrals until next bonus
+- **Cumulative Rewards**: Referral bonuses stack with tap rewards
 
-To get started with either the initial setup or the final version, follow these instructions:
+### 4. Enhanced UI
+- **Stats Panel**: Toggle-able panel showing NotCoin balance, progress, and referral stats
+- **Real-time Updates**: All counters update in real-time as you play
+- **Visual Feedback**: Progress bars and animations for better user experience
+- **Info Display**: Persistent info box showing current stats
 
-### Cloning the Repository
+## 🎮 How to Play
 
-1. **Clone the Repository**:
+1. **Tap to Earn**: Click the NotCoin in the center to earn points and progress toward NotCoin rewards
+2. **Track Progress**: Click "Show Stats" to see your NotCoin balance and progress
+3. **Invite Friends**: Use the referral system to add friends and earn bonus NotCoins
+4. **Withdraw**: Once you have 1,000+ NotCoins, use the withdrawal feature (once per week)
 
-    ```bash
-    git clone https://github.com/nikandr-surkov/Notcoin-Telegram-Mini-App-Clone.git
-    cd Notcoin-Telegram-Mini-App-Clone
-    ```
+## 📊 Reward Structure
 
-### Initial Setup
+- **Regular Taps**: 12 points per tap
+- **NotCoin Rewards**: 10 NotCoins for every 10,000 taps
+- **Referral Bonus**: 100 NotCoins for every 10 successful referrals
+- **Withdrawal Threshold**: Minimum 1,000 NotCoins
+- **Withdrawal Frequency**: Once per week maximum
 
-2. **Switch to the `initial-setup` Branch**:
+## 🛠 Technical Features
 
-    ```bash
-    git checkout initial-setup
-    ```
+- **Persistent Data**: All user progress saved in localStorage
+- **Real-time Calculations**: Rewards calculated dynamically
+- **Error Handling**: Robust error handling for withdrawals and data persistence
+- **Responsive Design**: Works on mobile and desktop
+- **TypeScript**: Fully typed for better development experience
 
-3. **Install Dependencies**:
+## 🚀 Getting Started
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+npm run dev
+```
 
-4. **Run the Development Server**:
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-    ```bash
-    npm run dev
-    ```
+## 🔧 Build
 
-5. **Open Your Browser**:
+```bash
+npm run build
+```
 
-    Navigate to localhost to see the initial setup.
+Builds the app for production to the `dist` folder.
 
-### Final Version
+## 📝 Features in Detail
 
-2. **Switch to the `final-version` Branch**:
+### NotCoin System
+The app tracks total taps and automatically calculates NotCoin rewards. The formula is:
+- Base NotCoins = Math.floor(totalTaps / 10000) * 10
+- Referral Bonus = Math.floor(referralCount / 10) * 100
+- Total NotCoins = Base NotCoins + Referral Bonus
 
-    ```bash
-    git checkout final-version
-    ```
+### Withdrawal System
+Users can withdraw NotCoins with the following rules:
+- Must have at least 1,000 NotCoins
+- Can only withdraw once per week
+- Withdrawal amount must be between 1,000 and current balance
+- All withdrawals are logged with timestamp
 
-3. **Install Dependencies**:
+### Data Persistence
+All user data is stored in localStorage including:
+- Points and energy levels
+- Total tap count
+- NotCoin balance
+- Referral count
+- Last withdrawal date
+- Withdrawal history
 
-    ```bash
-    npm install
-    ```
+The app automatically saves and loads this data on each session.
 
-4. **Run the Development Server**:
+---
 
-    ```bash
-    npm run dev
-    ```
-
-5. **Open Your Browser**:
-
-    Navigate to localhost to see the final version of the application.
-
-## Contact
-
-For any inquiries, please contact me in Telegram: [Nikandr Surkov](https://t.me/nikandr_s).
+**Built with React, TypeScript, Tailwind CSS, and Vite**
 
